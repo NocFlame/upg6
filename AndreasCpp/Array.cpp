@@ -40,7 +40,7 @@ void Array::quickSort(Array arr, int first, int last) {
 	Heltal tmp;
 	Heltal pivot = tal_ptr[(first + last) / 2].get();
 
-	/* partition */
+	/* partition 
 	while (low <= high) {
 		while (tal_ptr[low] < pivot)
 			low++;
@@ -53,7 +53,26 @@ void Array::quickSort(Array arr, int first, int last) {
 			low++;
 			high--;
 		}
-	};
+	};*/
+	do 
+	{
+		while (tal_ptr[low] < pivot)
+		{
+			low++;
+		}
+		while (tal_ptr[high] > pivot)
+		{
+			high--;
+		}
+		if (low <= high)
+		{
+			tmp = tal_ptr[low];
+			tal_ptr[low] = tal_ptr[high];
+			tal_ptr[high] = tmp;
+			low++;
+			high--;
+		}
+	} while (low <= high);
 
 	/* recursion */
 	if (first < high)
