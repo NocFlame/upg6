@@ -18,7 +18,12 @@ Array::Array(int storlek)
 
 Array::~Array()
 {
-	//delete [] tal_ptr;
+	//delete this;
+}
+
+void Array::destroy()
+{
+	delete[] tal_ptr;
 }
 
 //Always becomes the same random numbers! Need a reseed with seed to work better...
@@ -40,21 +45,21 @@ void Array::quickSort(Array arr, int first, int last) {
 	Heltal tmp;
 	Heltal pivot = tal_ptr[(first + last) / 2].get();
 
-	/* partition 
+	/* partition
 	while (low <= high) {
-		while (tal_ptr[low] < pivot)
-			low++;
-		while (tal_ptr[high] > pivot)
-			high--;
-		if (low <= high) {
-			tmp = tal_ptr[low];
-			tal_ptr[low] = tal_ptr[high];
-			tal_ptr[high] = tmp;
-			low++;
-			high--;
-		}
+	while (tal_ptr[low] < pivot)
+	low++;
+	while (tal_ptr[high] > pivot)
+	high--;
+	if (low <= high) {
+	tmp = tal_ptr[low];
+	tal_ptr[low] = tal_ptr[high];
+	tal_ptr[high] = tmp;
+	low++;
+	high--;
+	}
 	};*/
-	do 
+	do
 	{
 		while (tal_ptr[low] < pivot)
 		{

@@ -14,12 +14,19 @@ int _tmain(int argc, _TCHAR* argv[])
 	Heltal tal(2);
 	cout << "talen " << htal.get() << " & " << tal.get() << " nice" << std::endl;
 	(htal > tal) ? cout << "true" << endl : cout << "false" << endl;
-	Array a(20);
-	a.fillArray(0, 10);
+	int storlek = 10000;
+	cin.get();
+	Array a(storlek);
+	cin.get();
+	a.fillArray(0, 1000);
+	cin.get();
 	a.print();
-	a.quickSort(a, 0, 10);
+	cin.get();
+	a.quickSort(a, 0, --storlek);
 	cout << endl;
+	cin.get();
 	a.print();
+	a.destroy();
 	cin.get();
 	return 0;
 }

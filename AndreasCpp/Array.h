@@ -6,6 +6,7 @@ public:
 	Array();
 	Array(int);
 	~Array();
+	void destroy();
 	void fillArray(int, int);
 	void quickSort(Array, int, int);
 	//int get(int);
